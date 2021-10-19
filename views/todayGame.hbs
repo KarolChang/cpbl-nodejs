@@ -1,0 +1,23 @@
+<div class="container m-5">
+  <h1>Today Games</h1>
+  <form action="/todayGame" method="POST" class="mt-3">
+    <!-- gameDate -->
+    <div class="form-group mb-3">
+      <label for="gameDate">GameDate</label>
+      <input type="date" id="gameDate" name="gameDate">
+    </div>
+    <!-- submit button -->
+    <button type="submit" class="btn btn-success">查詢</button>
+  </form>
+</div>
+
+<script>
+  const today = new Date()
+  const year = today.getFullYear()
+  let month = today.getMonth() + 1
+  month = month < 10 ? '0' + month : month
+  let date = today.getDate()
+  date = date < 10 ? '0' + date : date
+
+  document.getElementById('gameDate').value = `${year}-${month}-${date}`
+</script> 
